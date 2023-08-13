@@ -43,7 +43,7 @@ The application will be available at http://localhost:3000.
 
 ## Live Demo
 
-[![Video Demo](./src/assets/Screenshot.png)](https://github.com/Shanmugamrskfamily/To-Do-Task-React/blob/main/src/assets/screen%20record.mp4)
+<video src="./src/assets/screen record.mp4">
 
 ## Technologies Used
 
