@@ -1,6 +1,6 @@
 # To-Do Application
 
-![Project Preview](https://github.com/Shanmugamrskfamily/To-Do-Task-React/blob/61945c77cd5d5e0c5721696b4f4287de5b08a73d/src/assets/screen%20record.mp4)
+![Project Preview](./src/assets/Screenshot.png)
 
 A simple To-Do application built using React, where you can manage your tasks and keep track of their completion status.
 
