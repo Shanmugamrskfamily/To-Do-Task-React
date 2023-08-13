@@ -50,7 +50,7 @@ The application will be available at http://localhost:3000.
 
 ## Nelify Deployed Website
 
-![Netlify Link]("https://to-do-task-manager-react-guvi.netlify.app/")
+Netlify Link- https://to-do-task-manager-react-guvi.netlify.app/ [![Netlify Status](https://api.netlify.com/api/v1/badges/543c75bd-8ff2-4da8-a9e4-772df476b41e/deploy-status)](https://app.netlify.com/sites/to-do-task-manager-react-guvi/deploys)
 
 ## License
 
