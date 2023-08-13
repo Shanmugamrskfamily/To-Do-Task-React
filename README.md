@@ -12,7 +12,7 @@ A simple To-Do application built using React, where you can manage your tasks an
 - [Run the development server](#run-the-development-server)
 - [Live Demo](#live-demo)
 - [Technologies Used](#technologies-used)
--
+- [Nelify Deployed Website](#nelify-deployed-website)
 - [License](#license)
 
 ## Features
@@ -42,9 +42,6 @@ npm start
 The application will be available at http://localhost:3000.
 
 ## Live Demo
-
-<video autoplay loop muted width="640" height="360">
-    <source src="./src/assets/screen record.mp4" type="video/mp4">
 
 ## Technologies Used
 
