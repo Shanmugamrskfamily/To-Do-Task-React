@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/548b4df8e4b0ff832640ca48/64bf2903-d38b-4e77-be52-0e75619459e4/Website-Background.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* This ensures the background covers the full viewport height */
+}

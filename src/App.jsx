@@ -86,12 +86,13 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <h1 className='py-5'>To-Do</h1>
+    <>
+    <div className='text-center'>
+      <h1 id='tittle' className='text-white'>To Do Application</h1><br />
       <form>
-      <div className='me-3 my-3'>
+        <div className='form-group'>
       <input
-      className='me-3 nam'
+      className='form-control mb-3'
         type="text"
         placeholder="Todo Name"
         value={taskName}
@@ -99,23 +100,21 @@ function App() {
         required
       />
       <input
-      className='ms-5 me-3 des'
-      width={60}
+      className='form-control mb-3'
         type="text"
         placeholder="Todo Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        required
       />
-      <button onClick={addTodo} className='btn ad'>{editMode ? 'Update Todo' : 'Add Todo'}</button>
+      <button  onClick={addTodo} className='btn btn-primary mb-3'>{editMode ? 'Update Todo' : 'Add Todo'}</button>
       </div>
       </form>
-      <div className='mytodos'>
-      <div>
-      <h3 className='py-3'><b>My To-Do's</b></h3>
       </div>
-        
-        <div>
-          <label for="filter" className='me-1'><h5><b>Status Filter : </b></h5></label>
+      <div className='mytodos'>
+      <h3 className='m-3'><b>My To-Do's</b></h3>
+      <div className='mb-3'>
+      <label for="filter"><b>Status Filter : </b></label>
         <select value={filter} name='filter' onChange={(e) => setFilter(e.target.value)}>
           <option value="All" className='all bg-light'>All</option>
           <option value="Completed" className='complete bg-success text-white'>Completed</option>
@@ -123,26 +122,19 @@ function App() {
         </select>
         </div>
       </div>
-      
-       
-        <div>
-        <div className='container d-grid'>
-        <div className='row'>
-        {filterTodos().map((todo) => (
-         
-         <div className='col-4' key={todo.id}>
-                <Todo
-                  todo={todo}
-                  updateStatus={updateStatus}
-                  editTodo={editTodo}
-                  deleteTodo={deleteTodo}
-                />
-              </div>
-        ))}
+    <div className='container d-grid'>
+    {filterTodos().map((todo) => (
+      <div className='' key={todo.id}>
+        <Todo
+          todo={todo}
+          updateStatus={updateStatus}
+          editTodo={editTodo}
+          deleteTodo={deleteTodo}
+        />
       </div>
+        ))}
     </div>
-    </div>
-    </div>
+    </>
   );
 };
 
