@@ -43,7 +43,7 @@ The application will be available at http://localhost:3000.
 
 ## Live Demo
 
-<video src="./src/assets/screen record.mp4">
+<img src="./src/assets/gif_image.gif">
 
 ## Technologies Used
 
