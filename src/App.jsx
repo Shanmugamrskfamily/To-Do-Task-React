@@ -92,7 +92,7 @@ function App() {
       <form>
         <div className='form-group'>
       <input
-      className='form-control mb-3'
+      className='form-control mb-1'
         type="text"
         placeholder="Todo Name"
         value={taskName}
@@ -100,14 +100,14 @@ function App() {
         required
       />
       <input
-      className='form-control mb-3'
+      className='form-control mb-1'
         type="text"
         placeholder="Todo Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         required
       />
-      <button  onClick={addTodo} className='btn btn-primary mb-3'>{editMode ? 'Update Todo' : 'Add Todo'}</button>
+      <button  onClick={addTodo} className='glow-on-hover mb-3 mt-3'>{editMode ? 'Update Todo' : 'Add Todo'}</button>
       </div>
       </form>
       </div>
