@@ -1,7 +1,6 @@
-
 import './App.css';
 import Todo from './Pages/Todo';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -24,6 +23,10 @@ function App() {
   }, [todos]);
 
   const addTodo = () => {
+    if (taskName.trim() === '' || description.trim() === '') {
+      return;
+    }
+
     if (editMode) {
       const updatedTodos = todos.map((todo) => {
         if (todo.id === editTodoId) {
@@ -43,6 +46,7 @@ function App() {
       };
       setTodos([...todos, newTodo]);
     }
+
     setTaskName('');
     setDescription('');
     setStatus('Not Completed');
@@ -87,55 +91,80 @@ function App() {
 
   return (
     <>
-    <div className='text-center'>
-      <h1 id='tittle' className='text-white'>To Do Application</h1><br />
-      <form>
-        <div className='form-group'>
-      <input
-      className='form-control mb-1'
-        type="text"
-        placeholder="Todo Name"
-        value={taskName}
-        onChange={(e) => setTaskName(e.target.value)}
-        required
-      />
-      <input
-      className='form-control mb-1'
-        type="text"
-        placeholder="Todo Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        required
-      />
-      <button  onClick={addTodo} className='glow-on-hover mb-3 mt-3'>{editMode ? 'Update Todo' : 'Add Todo'}</button>
-      </div>
-      </form>
+      <div className='text-center'>
+        <h1 id='tittle' className='text-white'>
+          To Do Application
+        </h1>
+        <br />
+        <form>
+          <div className='form-group'>
+            <input
+              className='form-control mb-1'
+              type='text'
+              placeholder='Todo Name'
+              value={taskName}
+              onChange={(e) => setTaskName(e.target.value)}
+              required
+            />
+            <input
+              className='form-control mb-1'
+              type='text'
+              placeholder='Todo Description'
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            />
+            <button
+              onClick={addTodo}
+              className='glow-on-hover mb-3 mt-3'
+            >
+              {editMode ? 'Update Todo' : 'Add Todo'}
+            </button>
+          </div>
+        </form>
       </div>
       <div className='mytodos'>
-      <h3 className='m-3'><b>My To-Do's</b></h3>
-      <div className='mb-3'>
-      <label for="filter"><b>Status Filter : </b></label>
-        <select value={filter} name='filter' onChange={(e) => setFilter(e.target.value)}>
-          <option value="All" className='all bg-light'>All</option>
-          <option value="Completed" className='complete bg-success text-white'>Completed</option>
-          <option value="Not Completed" className='bg-danger text-white'>Not Completed</option>
-        </select>
+        <h3 className='m-3'>
+          <b>My To-Do's</b>
+        </h3>
+        <div className='mb-3'>
+          <label htmlFor='filter'>
+            <b>Status Filter : </b>
+          </label>
+          <select
+            value={filter}
+            name='filter'
+            onChange={(e) => setFilter(e.target.value)}
+          >
+            <option value='All' className='all bg-light'>
+              All
+            </option>
+            <option
+              value='Completed'
+              className='complete bg-success text-white'
+            >
+              Completed
+            </option>
+            <option value='Not Completed' className='bg-danger text-white'>
+              Not Completed
+            </option>
+          </select>
         </div>
       </div>
-    <div className='container d-grid'>
-    {filterTodos().map((todo) => (
-      <div className='' key={todo.id}>
-        <Todo
-          todo={todo}
-          updateStatus={updateStatus}
-          editTodo={editTodo}
-          deleteTodo={deleteTodo}
-        />
-      </div>
+      <div className='container d-grid'>
+        {filterTodos().map((todo) => (
+          <div className='' key={todo.id}>
+            <Todo
+              todo={todo}
+              updateStatus={updateStatus}
+              editTodo={editTodo}
+              deleteTodo={deleteTodo}
+            />
+          </div>
         ))}
-    </div>
+      </div>
     </>
   );
-};
+}
 
 export default App;
