@@ -106,8 +106,8 @@ function App() {
               onChange={(e) => setTaskName(e.target.value)}
               required
             />
-            <input
-              className='form-control mb-1'
+            <textarea
+              className='form-control py-4 mb-1'
               type='text'
               placeholder='Todo Description'
               value={description}
@@ -129,13 +129,9 @@ function App() {
         </h3>
         <div className='mb-3'>
           <label htmlFor='filter'>
-            <b>Status Filter : </b>
+            <b>Status Filter:</b>
           </label>
-          <select
-            value={filter}
-            name='filter'
-            onChange={(e) => setFilter(e.target.value)}
-          >
+          <select value={filter} name='filter' onChange={(e) => setFilter(e.target.value)} >
             <option value='All' className='all bg-light'>
               All
             </option>
