@@ -43,7 +43,7 @@ export default function Todo({ todo, updateStatus, editTodo, deleteTodo }) {
         </div>
         <div className="text-center m-3 p-2">
           <button
-            className="btn btn-info"
+            className="btn me-2 btn-warning"
             onClick={() => editTodo(todo.id)}
             type="button"
           >

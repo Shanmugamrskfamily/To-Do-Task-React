@@ -1,9 +1,20 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("https://images.squarespace-cdn.com/content/v1/548b4df8e4b0ff832640ca48/64bf2903-d38b-4e77-be52-0e75619459e4/Website-Background.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
-  height: 100vh; /* This ensures the background covers the full viewport height */
+  background: linear-gradient(45deg, #49531a, #607403, rgb(194, 116, 7));
+  background-size: 400% 400% 200%;
+  animation: gradientAnimation 10s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
